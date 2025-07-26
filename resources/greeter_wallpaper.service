@@ -1,0 +1,11 @@
+[Unit]
+Description=Change greeter wallpaper on startup
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/env python3 /usr/local/bin/greeter_wallpaper/greeter_wallpaper.py
+WorkingDirectory=/usr/local/bin/greeter_wallpaper
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
