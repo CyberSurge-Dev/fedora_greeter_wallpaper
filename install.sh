@@ -8,7 +8,6 @@ fi
 
 
 echo "[+] Greeter Wallpaper Installer..."
-echo "[+] Creating directories for scripts"
 
 update_css () {
 	if grep -q "Greeter Wallpaper" "$1"; then
@@ -28,10 +27,11 @@ EOF
 	fi
 }
 
-
+echo "[+] Downloading dependencies"
 # Dependencies
 dnf install glib2-devel
 
+echo "[+] Creating directories for scripts"
 mkdir /usr/local/bin/greeter_wallpaper
 mkdir /usr/local/bin/greeter_wallpaper/backup
 mkdir /usr/local/bin/greeter_wallpaper/wallpapers
@@ -87,6 +87,7 @@ systemctl enable greeter_wallpaper.service
 
 # Clean up
 echo "Cleaning up..."
+chmod +x /usr/local/bin/greeter_wallpaper/*
 rm -r ./output
 rm ./gnome-shell-theme.gresource
 echo "[✓] Greeter_wallpaper is installed."
