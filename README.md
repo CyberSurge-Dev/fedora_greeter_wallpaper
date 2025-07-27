@@ -6,14 +6,17 @@ A simple script and service to automatically change the Gnome GDM login screen b
 ## Setup 
 Download/clone the repository, and open the directory in your terminal.
 Run the following commands:
-'''
+```
 chmod +x ./install.sh
 sudo ./install.sh
-'''
+```
+After this, ``restart your computer`` and if everything worked correctly, you should see a randomly selected wallpaper from the wallpaperfolder as your background.
 
 ## Change wallpapers
 Simply put your new wallpapers in the wallpaper directory and run the following commands in terminal (ensure you are in the directory with the update_wallpapers.sh script).
-'''
+```
 chmod +x ./update_wallpapers.sh
 sudo ./update_wallpapers.sh
-'''
+```
+## Other stuff
+if you find that your wallpaper no longer shows up after a system update, simply run the install script again and the issue should go away. There is no issue with having to run the script mutliple times, unless you run into package errors or python errors.
